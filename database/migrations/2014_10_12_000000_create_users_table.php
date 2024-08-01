@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            // tambahan
+            $table->enum('status', ['active', 'nonactive'])->default('active');
+            $table->enum('is_admin', ['1', '0'])->default('0');
         });
     }
 
